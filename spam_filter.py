@@ -17,6 +17,9 @@ import random
 data = pandas.read_csv('../spam.csv', encoding='latin-1')
 more_data = pandas.read_csv('../small_sms_spam_messages.csv', encoding='latin-1')
 
+data = data.sample(frac=1)
+more_data = more_data.sample(frac=1)
+
 training_part = int(len(data) * 0.7)
 train_data = data[:training_part]
 test_data = data[training_part:]
